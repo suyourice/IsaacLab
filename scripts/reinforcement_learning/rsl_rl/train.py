@@ -8,6 +8,7 @@
 """Launch Isaac Sim Simulator first."""
 
 import argparse
+import os
 import sys
 
 from isaaclab.app import AppLauncher
@@ -28,6 +29,12 @@ parser.add_argument("--max_iterations", type=int, default=None, help="RL Policy 
 parser.add_argument(
     "--distributed", action="store_true", default=False, help="Run training with multiple GPUs or nodes."
 )
+parser.add_argument(
+    "--robot-usd",
+    type=str,
+    default=None,
+    help="Override the Dodo robot USD used for training (relative or absolute path).",
+)
 # append RSL-RL cli arguments
 cli_args.add_rsl_rl_args(parser)
 # append AppLauncher cli args
@@ -37,6 +44,10 @@ args_cli, hydra_args = parser.parse_known_args()
 # always enable cameras to record video
 if args_cli.video:
     args_cli.enable_cameras = True
+
+# optionally override the Dodo robot USD used by the task
+if args_cli.robot_usd:
+    os.environ["DODO_ROBOT_USD"] = args_cli.robot_usd
 
 # clear out sys.argv for Hydra
 sys.argv = [sys.argv[0]] + hydra_args
@@ -70,7 +81,6 @@ if args_cli.distributed and version.parse(installed_version) < version.parse(RSL
 """Rest everything follows."""
 
 import gymnasium as gym
-import os
 import torch
 from datetime import datetime
 
