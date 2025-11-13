@@ -25,7 +25,7 @@
     <collision> <!-- Simplified collision to box -->
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <box size="0.30 0.22 0.16"/>
+        <box size="0.21 0.26 0.22"/>
       </geometry>
     </collision>
   </link>
@@ -51,10 +51,10 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision> <!-- Simplified collision to cylinder -->
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="0.03" length="0.18"/>
+    <collision> <!-- Simplified collision to capsule -->
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry> 
+        <capsule radius="0.026" length="0.09"/>
       </geometry>
     </collision>
   </link>
@@ -92,10 +92,10 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision> <!-- Simplified collision to cylinder -->
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+    <collision> <!-- Simplified collision to capsule -->
+      <origin xyz="0.1 0 0.021" rpy="0 1.5708 0"/>
       <geometry>
-        <cylinder radius="0.025" length="0.22"/>
+        <capsule radius="0.03" length="0.18"/>
       </geometry>
     </collision>
   </link>
@@ -133,10 +133,10 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision> <!-- Simplified collision to cylinder -->
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+    <collision> <!-- Simplified collision to capsule -->
+      <origin xyz="0.1 0 0.01" rpy="0 1.5708 0"/>
       <geometry>
-        <cylinder radius="0.025" length="0.22"/>
+        <capsule radius="0.03" length="0.175"/>
       </geometry>
     </collision>
   </link>
@@ -174,9 +174,9 @@
       </material>
     </visual>
     <collision> <!-- Simplified collision to box -->
-      <origin xyz="0 0 -0.015" rpy="0 0 0"/>
+      <origin xyz="0.011 0.0135 -0.0035" rpy="0 0 0"/>
       <geometry>
-        <box size="0.08 0.05 0.04"/>
+        <box size="0.06 0.095 0.034"/>
       </geometry>
     </collision>
   </link>
@@ -213,10 +213,10 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision> <!-- Simplified collision to cylinder -->
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <cylinder radius="0.03" length="0.18"/>
+    <collision> <!-- Simplified collision to capsule -->
+      <origin xyz="0 0 0" rpy=" 0 0 0"/>
+      <geometry> 
+        <capsule radius="0.026" length="0.09"/>
       </geometry>
     </collision>
   </link>
@@ -253,10 +253,10 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision> <!-- Simplified collision to cylinder -->
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+    <collision> <!-- Simplified collision to capsule -->
+      <origin xyz="0.1 0 -0.021" rpy="0 1.5708 0"/>
       <geometry>
-        <cylinder radius="0.025" length="0.22"/>
+        <capsule radius="0.03" length="0.185"/>
       </geometry>
     </collision>
   </link>
@@ -293,10 +293,10 @@
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
-    <collision> <!-- Simplified collision to cylinder -->
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+    <collision> <!-- Simplified collision to capsule -->
+      <origin xyz="0.1 0 -0.01" rpy="0 1.5708 0"/>
       <geometry>
-        <cylinder radius="0.025" length="0.22"/>
+        <capsule radius="0.03" length="0.175"/>
       </geometry>
     </collision>
   </link>
@@ -334,9 +334,9 @@
       </material>
     </visual>
     <collision> <!-- Simplified collision to box -->
-      <origin xyz="0 0 -0.015" rpy="0 0 0"/>
+      <origin xyz="0.011 0.0135 0.0035" rpy="0 0 0"/>
       <geometry>
-        <box size="0.08 0.05 0.04"/>
+        <box size="0.06 0.095 0.034"/>
       </geometry>
     </collision>
   </link>
