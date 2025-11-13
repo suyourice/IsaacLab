@@ -1,5 +1,8 @@
-# Configuration for Dodo robot in rough terrain environment for velocity locomotion task. - YOU-RI
+import os
 
+from functools import lru_cache
+
+# Configuration for Dodo robot in rough terrain environment for velocity locomotion task. - YOU-RI
 from isaaclab.managers import RewardTermCfg as RewTerm
 from isaaclab.managers import SceneEntityCfg
 from isaaclab.utils import configclass
@@ -10,7 +13,17 @@ from isaaclab_tasks.manager_based.locomotion.velocity.velocity_env_cfg import Lo
 ##
 # Pre-defined configs
 ##
-from isaaclab_assets import DODO_ORIGIN_CFG  # isort: skip
+from isaaclab_assets import DODO_ORIGIN_CFG, get_dodo_cfg  # isort: skip
+
+_DODO_USD_ENV_KEY = "DODO_ROBOT_USD"
+
+
+@lru_cache(maxsize=None)
+def _resolve_robot_cfg():
+    usd_override = os.environ.get(_DODO_USD_ENV_KEY, "").strip()
+    if usd_override:
+        return get_dodo_cfg(usd_override)
+    return DODO_ORIGIN_CFG
 
 
 @configclass
@@ -74,7 +87,7 @@ class DodoRoughEnvCfg(LocomotionVelocityRoughEnvCfg):
         # post init of parent
         super().__post_init__()
         # Scene
-        self.scene.robot = DODO_ORIGIN_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
+        self.scene.robot = _resolve_robot_cfg().replace(prim_path="{ENV_REGEX_NS}/Robot")
         self.scene.height_scanner.prim_path = "{ENV_REGEX_NS}/Robot/body_link"
 
         # Randomization
