@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Collision simplified to primitive & mimics are deleted -->
+<!-- Collision meshes replaced with primitive shapes & mimic joint definitions removed -->
 <robot name="dodobot_v3">
   <link name="body_link">
     <inertial>
