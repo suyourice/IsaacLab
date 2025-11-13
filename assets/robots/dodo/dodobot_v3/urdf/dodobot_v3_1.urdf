@@ -25,7 +25,7 @@
     <collision> <!-- Simplified collision to box -->
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <box size="0.21 0.26 0.22"/>
+        <box size="0.21 0.26 0.24"/>
       </geometry>
     </collision>
   </link>
@@ -254,7 +254,7 @@
       </material>
     </visual>
     <collision> <!-- Simplified collision to capsule -->
-      <origin xyz="0.1 0 -0.021" rpy="0 1.5708 0"/>
+      <origin xyz="0.1 0 -0.01" rpy="0 1.5708 0"/>
       <geometry>
         <capsule radius="0.03" length="0.185"/>
       </geometry>
