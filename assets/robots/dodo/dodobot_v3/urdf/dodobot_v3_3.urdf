@@ -2,14 +2,21 @@
 <!-- Collision meshes replaced with primitive shapes & mimic joint definitions removed -->
 <robot
   name="dodobot_v3">
+  <link name="base_link"/>
 
+  <joint name="base_to_body" type="fixed">
+    <!-- Rotate -90 degrees around Z-axis: aligns old +Y to new +X -->
+    <origin xyz="0 0 0" rpy="0 0 -1.5708"/>
+    <parent link="base_link"/>
+    <child link="body_link"/>
+  </joint>
   <!-- ====================== body_link ====================== -->
   <link
     name="body_link">
     <inertial>
       <origin
         xyz="-0.0049584 0.034185 -0.011531"
-        rpy="0 0 0" />
+        rpy="0 0 -1.5708" />
       <mass
         value="3.9306" />
       <inertia
@@ -38,11 +45,11 @@
 
     <collision> <!-- Simplified collision to box -->
       <origin
-        xyz="0 0.0135 0"
+        xyz="0 0.0135 0.0254"
         rpy="0 0 0" />
       <geometry>
         <box
-          size="0.21 0.29 0.24" />
+          size="0.21 0.29 0.1825" />
       </geometry>
     </collision>
   </link>
@@ -53,7 +60,7 @@
     <inertial>
       <origin
         xyz="0.0026476 -0.011738 0.0034333"
-        rpy="0 0 0" />
+        rpy="-1.5708 0 -1.5708" />
       <mass
         value="0.087539" />
       <inertia
@@ -402,7 +409,7 @@
     <child
       link="left_link_1" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 0 -1" />
     <limit
       lower="-0.3"
       upper="0.3"

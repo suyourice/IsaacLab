@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Collision meshes replaced with primitive shapes & mimic joint definitions removed & axes aligned -->
+<!-- Collision meshes are replaced with primitive shapes & removed mimic joint definitions & aligned axes -->
 <robot
   name="dodobot_v3">
   <link name="base_link"/>

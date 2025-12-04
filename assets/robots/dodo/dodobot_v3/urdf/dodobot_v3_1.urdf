@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Collision simplified to primitive -->
+<!-- Collision meshes replaced with primitive shapes -->
 <robot name="dodobot_v3">
-  <link name="body_link">
+  <link
+    name="body_link">
     <inertial>
-      <origin xyz="-0.0049584 0.034185 -0.011531" rpy="0 0 0" />
+      <origin xyz="-0.0049584 0.034185 -0.011531"
+      rpy="0 0 0" />
       <mass value="3.9306" />
       <inertia
         ixx="0.0051203"
@@ -16,16 +18,16 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://dodobot_v3/meshes/body_link.STL" />
+        <mesh filename="package://dodobot_v3/meshes/body_link.STL" /> <!-- if you face issues, replace this part to relative path (../meshes/body_link.STL)-->
       </geometry>
       <material name="">
         <color rgba="0.72941 0.60784 0.4902 1" />
       </material>
     </visual>
     <collision> <!-- Simplified collision to box -->
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0.0135 0" rpy="0 0 0"/>
       <geometry>
-        <box size="0.21 0.26 0.24"/>
+        <box size="0.21 0.29 0.24"/>
       </geometry>
     </collision>
   </link>
@@ -45,12 +47,15 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://dodobot_v3/meshes/right_link_1.STL" />
+        <mesh filename="package://dodobot_v3/meshes/right_link_1.STL" /> <!-- if you face issues, replace this part to relative path (../meshes/right_link_1.STL)-->
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1" />
       </material>
-    </visual>
+    </visual>" length="0.09"/>
+      </geometry>
+    </collision>
+  </link>
     <collision> <!-- Simplified collision to capsule -->
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry> 
@@ -63,7 +68,7 @@
     <origin xyz="0.066 0 -0.092" rpy="1.5708 0 3.1416" />
     <parent link="body_link" />
     <child link="right_link_1" />
-    <axis xyz="0 0 1" />
+    <axis xyz="0 0 -1" />
     <limit lower="-0.3" upper="0.3" effort="3" velocity="5" />
     <calibration rising="0" falling="0" />
     <dynamics damping="0" friction="0" />
@@ -86,7 +91,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://dodobot_v3/meshes/right_link_2.STL" />
+        <mesh filename="package://dodobot_v3/meshes/right_link_2.STL" /> <!-- if you face issues, replace this part to relative path (../meshes/right_link_2.STL)-->
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1" />
@@ -127,7 +132,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://dodobot_v3/meshes/right_link_3.STL" />
+        <mesh filename="package://dodobot_v3/meshes/right_link_3.STL" /> <!-- if you face issues, replace this part to relative path (../meshes/right_link_3.STL)-->
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1" />
@@ -167,7 +172,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://dodobot_v3/meshes/right_link_4.STL" />
+        <mesh filename="package://dodobot_v3/meshes/right_link_4.STL" /> <!-- if you face issues, replace this part to relative path (../meshes/right_link_4.STL)-->
       </geometry>
       <material name="">
         <color rgba="0.72941 0.60784 0.4902 1" />
@@ -180,6 +185,9 @@
       </geometry>
     </collision>
   </link>
+  <link name="left_link_2">
+    <inertial>
+      <origin xyz="0.1097 2.06
 
   <joint name="right_joint_4" type="revolute">
     <origin xyz="0.2 0 0.03745" rpy="0 0 0" />
@@ -207,7 +215,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://dodobot_v3/meshes/left_link_1.STL" />
+        <mesh filename="package://dodobot_v3/meshes/left_link_1.STL" /> <!-- if you face issues, replace this part to relative path (../meshes/left_link_1.STL)-->
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1" />
@@ -247,7 +255,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://dodobot_v3/meshes/left_link_2.STL" />
+        <mesh filename="package://dodobot_v3/meshes/left_link_2.STL" /> <!-- if you face issues, replace this part to relative path (../meshes/left_link_2.STL)-->
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1" />
@@ -265,7 +273,7 @@
     <origin xyz="0.01295 -0.04009 -0.01705" rpy="1.5708 0 -1.5708" />
     <parent link="left_link_1" />
     <child link="left_link_2" />
-    <axis xyz="0 0 -1" />
+    <axis xyz="0 0 1" />
     <limit lower="-1.5" upper="1.5" effort="3" velocity="5" />
     <calibration rising="0" falling="0" />
     <dynamics damping="0" friction="0" />
@@ -287,7 +295,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://dodobot_v3/meshes/left_link_3.STL" />
+        <mesh filename="package://dodobot_v3/meshes/left_link_3.STL" /> <!-- if you face issues, replace this part to relative path (../meshes/left_link_3.STL)-->
       </geometry>
       <material name="">
         <color rgba="0.75294 0.75294 0.75294 1" />
@@ -305,7 +313,7 @@
     <origin xyz="0.2 0 -0.03745" rpy="0 0 0" />
     <parent link="left_link_2" />
     <child link="left_link_3" />
-    <axis xyz="0 0 -1" />
+    <axis xyz="0 0 1" />
     <limit lower="-1.5" upper="1.5" effort="3" velocity="5" />
     <calibration rising="0" falling="0" />
     <dynamics damping="0" friction="0" />
@@ -327,7 +335,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://dodobot_v3/meshes/left_link_4.STL" />
+        <mesh filename="package://dodobot_v3/meshes/left_link_4.STL" /> <!-- if you face issues, replace this part to relative path (../meshes/left_link_4.STL)-->
       </geometry>
       <material name="">
         <color rgba="0.72941 0.60784 0.4902 1" />
@@ -345,7 +353,7 @@
     <origin xyz="0.2 0 -0.03745" rpy="0 0 0" />
     <parent link="left_link_3" />
     <child link="left_link_4" />
-    <axis xyz="0 0 -1" />
+    <axis xyz="0 0 1" />
     <limit lower="-1.5" upper="1.5" effort="3" velocity="5" />
     <calibration rising="0" falling="0" />
     <dynamics damping="0" friction="0" />
