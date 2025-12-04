@@ -9,7 +9,8 @@ import isaaclab.sim as sim_utils
 from isaaclab.actuators import ImplicitActuatorCfg
 from isaaclab.assets import ArticulationCfg
 
-_DEFAULT_USD_REL_PATH = "assets/robots/dodo/dodo_origin.usd"
+# Default relative path to the Dodo USD asset.
+_DEFAULT_USD_REL_PATH = "assets/robots/dodo/dodo.usd"
 
 
 def _resolve_usd_path(path: str) -> str:
@@ -29,7 +30,7 @@ def get_dodo_cfg(usd_path: str | None = None) -> ArticulationCfg:
 
     Args:
         usd_path: Optional path to a USD describing the robot. Relative paths are interpreted
-            with respect to the repository root. When omitted, ``dodo_origin.usd`` is used.
+            with respect to the repository root. When omitted, ``default usd`` is used.
     """
     usd_path = _DEFAULT_USD_REL_PATH if usd_path is None else usd_path
     usd_path = _resolve_usd_path(usd_path)
@@ -37,7 +38,7 @@ def get_dodo_cfg(usd_path: str | None = None) -> ArticulationCfg:
     return ArticulationCfg(
         prim_path="{ENV_REGEX_NS}/Robot",
         spawn=sim_utils.UsdFileCfg(
-            usd_path=usd_path,
+            usd_path=usd_path,    
             activate_contact_sensors=True,
             rigid_props=sim_utils.RigidBodyPropertiesCfg(
                 disable_gravity=False,
